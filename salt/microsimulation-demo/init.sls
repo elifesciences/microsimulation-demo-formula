@@ -25,7 +25,7 @@ microsimulation-demo-configuration:
         - require:
             - microsimulation-demo-repository
 
-microsimulation-demo-docker-compose:
+microsimulation-demo-docker-compose-build:
     cmd.run:
         - name: |
             docker-compose -f docker-compose.yml up -d --force-recreate
@@ -34,6 +34,15 @@ microsimulation-demo-docker-compose:
         - require:
             - microsimulation-demo-configuration
 
+microsimulation-demo-docker-compose-up:
+    cmd.run:
+        - name: |
+            docker-compose -f docker-compose.yml up -d --force-recreate
+        - cwd: /srv/microsimulation-demo
+        - user: {{ pillar.elife.deploy_user.username }}
+        - require:
+            - microsimulation-demo-docker-compose-build
+
 microsimulation-demo-nginx-vhost:
     file.managed:
         - name: /etc/nginx/sites-enabled/microsimulation-demo.conf
@@ -41,7 +50,7 @@ microsimulation-demo-nginx-vhost:
         - template: jinja
         - require:
             - nginx-config
-            - microsimulation-demo-docker-compose
+            - microsimulation-demo-docker-compose-up
         - listen_in:
             - service: nginx-server-service
 
