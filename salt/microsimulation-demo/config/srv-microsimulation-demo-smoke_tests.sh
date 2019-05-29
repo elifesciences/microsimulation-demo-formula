@@ -18,6 +18,7 @@ echo "Loading each issue page..."
 [ $(curl -v http://localhost:8080/collections/3-2/volume-3-2-autumn-2010 -o /dev/null -w '%{http_code}') == 200 ]
 [ $(curl -v http://localhost:8080/collections/4-1/volume-4-1-spring-2011 -o /dev/null -w '%{http_code}') == 200 ]
 [ $(curl -v http://localhost:8080/collections/4-2/volume-4-2-autumn-2011 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/collections/7-1/volume-7-1-spring-2015 -o /dev/null -w '%{http_code}') == 200 ]
 
 echo "Loading article pages..."
 [ $(curl -v http://localhost:8080/articles/00001 -o /dev/null -w '%{http_code}') == 200 ]
@@ -76,3 +77,8 @@ echo "Loading article pages..."
 [ $(curl -v http://localhost:8080/articles/00052 -o /dev/null -w '%{http_code}') == 200 ]
 [ $(curl -v http://localhost:8080/articles/00053 -o /dev/null -w '%{http_code}') == 200 ]
 [ $(curl -v http://localhost:8080/articles/00054 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/articles/00110 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/articles/00111 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/articles/00112 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/articles/00113 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/articles/00114 -o /dev/null -w '%{http_code}') == 200 ]
