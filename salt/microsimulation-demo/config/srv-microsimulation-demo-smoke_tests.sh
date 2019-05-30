@@ -20,7 +20,8 @@ echo "Loading each issue page..."
 [ $(curl -v http://localhost:8080/collections/4-2/volume-4-2-autumn-2011 -o /dev/null -w '%{http_code}') == 200 ]
 [ $(curl -v http://localhost:8080/collections/5-1/volume-5-1-spring-2012 -o /dev/null -w '%{http_code}') == 200 ]
 [ $(curl -v http://localhost:8080/collections/5-2/volume-5-2-autumn-2012 -o /dev/null -w '%{http_code}') == 200 ]
-[ $(curl -v http://localhost:8080/collections/7-1/volume-7-1-spring-2015 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/collections/7-1/volume-7-1-spring-2014 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/collections/8-1/volume-8-1-spring-2015 -o /dev/null -w '%{http_code}') == 200 ]
 
 echo "Loading article pages..."
 [ $(curl -v http://localhost:8080/articles/00001 -o /dev/null -w '%{http_code}') == 200 ]
@@ -96,6 +97,17 @@ echo "Loading article pages..."
 # [ $(curl -v http://localhost:8080/articles/00071 -o /dev/null -w '%{http_code}') == 200 ]
 [ $(curl -v http://localhost:8080/articles/00072 -o /dev/null -w '%{http_code}') == 200 ]
 [ $(curl -v http://localhost:8080/articles/00073 -o /dev/null -w '%{http_code}') == 200 ]
+
+# 00091 currently is not valid
+# [ $(curl -v http://localhost:8080/articles/00091 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/articles/00092 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/articles/00093 -o /dev/null -w '%{http_code}') == 200 ]
+# 00094 currently is not valid
+# [ $(curl -v http://localhost:8080/articles/00094 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/articles/00095 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/articles/00096 -o /dev/null -w '%{http_code}') == 200 ]
+[ $(curl -v http://localhost:8080/articles/00097 -o /dev/null -w '%{http_code}') == 200 ]
+
 
 [ $(curl -v http://localhost:8080/articles/00110 -o /dev/null -w '%{http_code}') == 200 ]
 [ $(curl -v http://localhost:8080/articles/00111 -o /dev/null -w '%{http_code}') == 200 ]
