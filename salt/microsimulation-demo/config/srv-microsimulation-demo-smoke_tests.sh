@@ -114,3 +114,6 @@ echo "Loading article pages..."
 [ $(curl -v http://localhost:8080/articles/00112 -o /dev/null -w '%{http_code}') == 200 ]
 [ $(curl -v http://localhost:8080/articles/00113 -o /dev/null -w '%{http_code}') == 200 ]
 [ $(curl -v http://localhost:8080/articles/00114 -o /dev/null -w '%{http_code}') == 200 ]
+
+echo "Loading images..."
+[ $(curl -v http://localhost:8080/iiif/2/00001%2Fijm-00001-fig1.tif/full/full/0/default.jpg -o /dev/null -w '%{http_code}') == 200 ]
