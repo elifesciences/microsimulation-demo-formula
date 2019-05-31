@@ -35,7 +35,10 @@ microsimulation-demo-docker-compose-build:
 
 microsimulation-demo-docker-compose-up:
     cmd.run:
-        - name: docker-compose -f docker-compose.yml up -d --force-recreate
+        - name: 
+            set -e
+            docker-compose -f docker-compose.yml down -v
+            docker-compose -f docker-compose.yml up -d --force-recreate
         - cwd: /srv/microsimulation-demo
         - user: {{ pillar.elife.deploy_user.username }}
         - require:
